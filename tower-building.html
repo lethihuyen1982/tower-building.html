@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="panel"></pre>
+    <input id="floor" type="number" oninput="tower()">
+    <script>
+        function tower() {
+            document.getElementById("panel").innerText = ""
+            let floor = Number(document.getElementById("floor").value)
+            for (let i = 0; i < floor; i++) {
+                for (let j = 0; j < 6; j++) {
+                    document.getElementById("panel").innerText += "*"
+                }
+                document.getElementById("panel").innerText += " \n"
+                for (let k = 0; k < 4; k++) {
+                    document.getElementById("panel").innerText += "*"
+                }
+                document.getElementById("panel").innerText += " \n"
+            }
+
+        }
+    </script>
+</body>
+
+</html>
