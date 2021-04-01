@@ -10,8 +10,29 @@
 
 <body>
     <pre id="panel"></pre>
-    <input id="floor" type="number" oninput="tower()">
+    Top <input id="top" type="number" oninput="towerTop()">
+    <br>
+    <br>
+    Floor <input id="floor" type="number" oninput="tower()">
+    <br>
+    <br>
+    Base <input id="base" type="number" oninput="towerBase()">
+
+
     <script>
+        function towerTop() {
+
+            document.getElementById("panel").innerText += " "
+            for (let i = 0; i < 2; i++) {
+                document.getElementById("panel").innerText += "*"
+            }
+            document.getElementById("panel").innerText += "\n"
+            for (let j = 0; j < 4; j++) {
+                document.getElementById("panel").innerText += "*"
+            }
+            document.getElementById("panel").innerText += "\n"
+
+        }
         function tower() {
             document.getElementById("panel").innerText = ""
             let floor = Number(document.getElementById("floor").value)
@@ -19,14 +40,25 @@
                 for (let j = 0; j < 6; j++) {
                     document.getElementById("panel").innerText += "*"
                 }
-                document.getElementById("panel").innerText += " \n"
-                for (let k = 0; k < 4; k++) {
+                for (let j = 0; j < 2; j++) {
+                    document.getElementById("panel").innerText += "\n "
+                    for (let k = 0; k < 4; k++) {
+                        document.getElementById("panel").innerText += "*"
+                    }
+                }
+                document.getElementById("panel").innerText += "\n"
+            }
+        }
+        function towerBase() {
+            let base = Number(document.getElementById("base").value)
+            for (let i = 0; i < base; i++) {
+                for (let j = 0; j < 6; j++) {
                     document.getElementById("panel").innerText += "*"
                 }
-                document.getElementById("panel").innerText += " \n"
+                document.getElementById("panel").innerText += "\n"
             }
-
         }
+
     </script>
 </body>
 
